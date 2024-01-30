@@ -1,0 +1,36 @@
+body {
+     background: black url("https://s3.amazonaws.com/csstarwars/background.png"); 
+}
+   
+/* Navbar */
+
+.custom-navbar {
+     background-color: transparent;
+     backdrop-filter: blur(1px);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+@keyframes shine {
+     0% {
+       opacity: 1;
+       filter: brightness(100%) hue-rotate(0deg);
+     }
+   
+     50% {
+       opacity: 0.5;
+       filter: brightness(150%) hue-rotate(120deg); 
+     }
+   
+     100% {
+       opacity: 1;
+       filter: brightness(100%) hue-rotate(240deg); 
+     }
+     
+   }
+   
+   .logo {
+     animation: shine 4s infinite;
+   }
+   
