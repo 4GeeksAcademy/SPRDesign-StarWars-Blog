@@ -1,36 +1,70 @@
 body {
-     background: black url("https://s3.amazonaws.com/csstarwars/background.png"); 
+  background: black url("https://s3.amazonaws.com/csstarwars/background.png");
+  font-family: "Bungee Outline", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color:white;
+
 }
-   
+
 /* Navbar */
 
 .custom-navbar {
-     background-color: transparent;
-     backdrop-filter: blur(1px);
-     display: flex;
-     justify-content: center;
-     align-items: center;
+  background-color: transparent;
+  backdrop-filter: blur(1px);
+  display: flex;
+  width: 100%;
+
 }
 
+
 @keyframes shine {
-     0% {
-       opacity: 1;
-       filter: brightness(100%) hue-rotate(0deg);
-     }
-   
-     50% {
-       opacity: 0.5;
-       filter: brightness(150%) hue-rotate(120deg); 
-     }
-   
-     100% {
-       opacity: 1;
-       filter: brightness(100%) hue-rotate(240deg); 
-     }
-     
-   }
-   
-   .logo {
-     animation: shine 4s infinite;
-   }
-   
+  0% {
+    opacity: 1;
+    filter: brightness(100%) hue-rotate(0deg);
+  }
+
+  50% {
+    opacity: 0.5;
+    filter: brightness(150%) hue-rotate(120deg);
+  }
+
+  100% {
+    opacity: 1;
+    filter: brightness(100%) hue-rotate(240deg);
+  }
+
+}
+
+.logo {
+  animation: shine 4s infinite;
+}
+
+
+.btn-navbar {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid gold;
+  border-radius: 55px;
+  cursor: pointer;
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.btn-navbar i {
+  margin-right: 5px;
+  font-size: 20px;
+  color: gold;
+}
+
+.btn-navbar:hover {
+  background-color: rgba(243, 243, 238, 0.5);
+}
+
+
+
+

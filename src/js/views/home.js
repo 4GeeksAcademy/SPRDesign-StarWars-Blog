@@ -11,6 +11,7 @@ export const Home = () => (
     <CharacterCard />
     <PlanetCard />
     <StarshipCard />
+	
   </div>
 	/*<div className="text-center mt-5">
 		
