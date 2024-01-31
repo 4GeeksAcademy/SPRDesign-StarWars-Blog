@@ -4,27 +4,10 @@ import { useParams } from 'react-router'
 export default function StarshipDescription() {
     const { id } = useParams()
     const [starship, setStarship] = useState({})
-
-    function findNewId(oldID) {
-        const idMap = {
-          1: 2,
-          2: 3,
-          3: 5,
-          4: 9,
-          5: 11,
-          6: 12,
-          7: 13,
-          8: 15,
-          9: 17
-        };
-        return idMap[oldID] || null;
-      }
-
-      let updatedid = findNewId(id)
-
+ 
     useEffect(() => {
         async function getStarship() {
-            let response = await fetch("https://swapi.dev/api/starships/" + updatedid)
+            let response = await fetch("https://swapi.dev/api/starships/" + id)
             let data = await response.json()
             setStarship(data)
         }

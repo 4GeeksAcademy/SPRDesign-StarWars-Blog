@@ -5,11 +5,13 @@ import "../../styles/home.css";
 import CharacterCard from "../component/characterCard";
 import PlanetCard from "../component/planetCard";
 import StarshipCard from "../component/starshipCard";
+import VehicleCard from  "../component/vehicleCard";
 
 export const Home = () => (
 	<div className="container mt-5">
     <CharacterCard />
     <PlanetCard />
+	<VehicleCard />
     <StarshipCard />
 	
   </div>
