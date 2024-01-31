@@ -40,34 +40,39 @@ export default function CharacterCard() {
     }
 
     return (
+
         <div className='mb-5'>
 
-            {/* Botones personalizados para las flechas (arriba y centrados) */}
-            <div className="d-flex justify-content-between mt-5">
-                <button className="btn btn-secondary" onClick={showPrevious}>{'<'}</button>
+            <div className="d-flex justify-content-between mt-5 mb-3">
+                <button className="btn btn-warning text-white" onClick={showPrevious}>{'<'}</button>
                 <h1 className='character-title'>Characters</h1>
-                <button className="btn btn-secondary" onClick={showNext}>{'>'}</button>
+                <button className="btn btn-warning text-white" onClick={showNext}>{'>'}</button>
             </div>
 
             <Carousel activeIndex={currentIndex} onSelect={() => null} controls={false} indicators={false}>
+
                 {groupedCharacters.map((group, groupIndex) => (
+
                     <Carousel.Item key={groupIndex}>
                         <div className="d-flex justify-content-around">
                             {group.map((character, index) => (
                                 <div key={index} className="card" style={{ width: "18rem" }}>
                                     <img src="https://lumiere-a.akamaihd.net/v1/images/ct_starwarsgalaxyofadventures_r2d2_ddt-17324_26b8e267.jpeg?region=0,0,600,600" className="card-img-top" alt="..." />
-                                    <div className="card-body">
+                                    <div className="card-body text-center">
                                         <h5 className="card-title">{character.name}</h5>
-                                        <Link to={"/character-description/" + (groupIndex * 3 + index + 1)} className="btn btn-primary">Learn More</Link>
-                                        <button onClick={() => handleFavorites(character.name)} className="btn btn-danger">❤️</button>
+                                        <div className="d-flex justify-content-between">
+                                            <Link to={"/character-description/" + (groupIndex * 3 + index + 1)} className="btn btn-warning text-white">Learn More</Link>
+                                            <button onClick={() => handleFavorites(character.name)} className="btn btn-warning text-white"><i className="far fa-star"></i></button>
+                                        </div>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     </Carousel.Item>
-                ))}
-            </Carousel>
 
+                ))}
+
+            </Carousel>
 
         </div>
     );
