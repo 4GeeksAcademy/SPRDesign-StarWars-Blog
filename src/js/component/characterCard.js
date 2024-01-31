@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Context } from '../store/appContext';
 import { Carousel } from 'react-bootstrap';
 
+
 export default function CharacterCard() {
     const [characters, setCharacters] = useState([]);
     const { store, actions } = useContext(Context);
@@ -13,6 +14,7 @@ export default function CharacterCard() {
             let response = await fetch("https://swapi.dev/api/people/");
             let data = await response.json();
             setCharacters(data.results);
+            console.log(data.results)
         }
         getCharacters();
     }, []);
@@ -44,6 +46,7 @@ export default function CharacterCard() {
         <div className='mb-5'>
 
             <div className="d-flex justify-content-between mt-5 mb-3">
+                
                 <button className="btn btn-warning text-white" onClick={showPrevious}>{'<'}</button>
                 <h1 className='character-title'>Characters</h1>
                 <button className="btn btn-warning text-white" onClick={showNext}>{'>'}</button>
@@ -57,7 +60,7 @@ export default function CharacterCard() {
                         <div className="d-flex justify-content-around">
                             {group.map((character, index) => (
                                 <div key={index} className="card" style={{ width: "18rem" }}>
-                                    <img src="https://lumiere-a.akamaihd.net/v1/images/ct_starwarsgalaxyofadventures_r2d2_ddt-17324_26b8e267.jpeg?region=0,0,600,600" className="card-img-top" alt="..." />
+                                    <img src={`https://starwars-visualguide.com/assets/img/characters/${(groupIndex * 3 + index + 1)}.jpg`} className="card-img-top" alt="Character Photo" />
                                     <div className="card-body text-center">
                                         <h5 className="card-title">{character.name}</h5>
                                         <div className="d-flex justify-content-between">

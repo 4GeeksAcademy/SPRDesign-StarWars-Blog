@@ -57,7 +57,7 @@ export default function PlanetCard() {
             <div className="d-flex justify-content-around">
               {group.map((planet, index) => (
                 <div key={index} className="card" style={{ width: "18rem" }}>
-                  <img src="https://static.wikia.nocookie.net/starwars/images/7/72/Teth-TVE.png/revision/latest?cb=20190423045047" className="card-img-top" alt="..." />
+                  <img src={`https://starwars-visualguide.com/assets/img/planets/${(groupIndex * 3 + index + 1)}.jpg`} className="card-img-top" alt="Planet Photo" />
                   <div className="card-body text-center">
                     <h5 className="card-title">{planet.name}</h5>
                     <div className="d-flex justify-content-between">

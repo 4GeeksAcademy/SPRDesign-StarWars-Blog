@@ -58,7 +58,8 @@ export default function starshipCard() {
                         <div className="d-flex justify-content-around">
                             {group.map((starship, index) => (
                                 <div key={index} className="card" style={{ width: "18rem" }}>
-                                    <img src="https://www.denofgeek.com/wp-content/uploads/2019/12/x-wing.jpg?fit=1944%2C1339" className="card-img-top" alt="..." />
+                                    {/*<img src="https://www.denofgeek.com/wp-content/uploads/2019/12/x-wing.jpg?fit=1944%2C1339" className="card-img-top" alt="..." />*/}
+                                    <img src={`https://starwars-visualguide.com/assets/img/starships/${(groupIndex * 3 + index + 1)}.jpg`} className="card-img-top" alt="Starship Photo" />
                                     <div className="card-body text-center">
                                         <h5 className="card-title">{starship.name}</h5>
                                         <div className="d-flex justify-content-between">

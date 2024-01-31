@@ -57,7 +57,8 @@ export default function VehicleCard() {
             <div className="d-flex justify-content-around">
               {group.map((vehicle, index) => (
                 <div key={index} className="card" style={{ width: "18rem" }}>
-                  <img src="https://static.wikia.nocookie.net/swse/images/7/71/HAVw_A5_Juggernaut.png/revision/latest?cb=20190702182036" className="card-img-top" alt="..."/>
+                 {/* <img src="https://static.wikia.nocookie.net/swse/images/7/71/HAVw_A5_Juggernaut.png/revision/latest?cb=20190702182036" className="card-img-top" alt="..."/> */}
+                 <img src={`https://starwars-visualguide.com/assets/img/vehicles/${(groupIndex * 3 + index + 1)}.jpg`} className="card-img-top" alt="Vehicle Photo" />
                   <div className="card-body text-center">
                     <h5 className="card-title">{vehicle.name}</h5>
                     <div className="d-flex justify-content-between">

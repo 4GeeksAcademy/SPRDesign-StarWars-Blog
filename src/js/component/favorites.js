@@ -8,10 +8,11 @@ export const Favorites = () => {
     return (
         <div className="d-flex justify-content-end">
             <div className="dropdown">
-                <button className="btn dropdown-toggle btn-favorites" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Favorites
+                <button className="btn dropdown-toggle btn-favorites" type="button" data-bs-toggle="dropdown" aria-expanded="false" style={{ color: 'white' }}>
                     <i className="far fa-star"></i>
+                    Favorites (<span style={{ color: 'yellow' }}>{store.favorites.length}</span>)
                 </button>
+
                 <ul className="dropdown-menu dropdown-menu-end">
                     {store.favorites?.map((favorite, index) => (
                         <li key={index} className="dropdown-item">
