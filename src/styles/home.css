@@ -100,3 +100,32 @@ body {
     background-position: -100% 0;
   }
 }
+
+
+
+/* Description */
+
+.card-title {
+  color: gold;
+  font-size: larger;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.card-text {
+  color: gold;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.card-text span {
+  color: white;
+}
+
+.card-text-description{
+  color: white;
+  margin-left: 20px;
+}

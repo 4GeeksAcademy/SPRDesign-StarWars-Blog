@@ -53,12 +53,12 @@ export default function CharacterCard() {
                     <Carousel.Item key={groupIndex}>
                         <div className="d-flex justify-content-around">
                             {group.map((character, index) => (
-                                <div key={index} className="card" style={{ width: "16rem", border: "2px solid gold" }}>
-                                    <img src={`https://starwars-visualguide.com/assets/img/characters/${(groupIndex * 4 + index + 1)}.jpg`} className="card-img-top" alt="Character Photo" />
+                                <div key={index} className="card" style={{ width: "16rem", border: "2px solid gold", background:"transparent" }}>
+                                    <img src={`https://starwars-visualguide.com/assets/img/characters/${(groupIndex * 4 + index + 1)}.jpg`} className="card-img-top" alt="Character Photo" style={{ borderBottom: '2px solid gold'}} />
                                     <div className="card-body text-center">
                                         <h5 className="card-title">{character.name}</h5>
                                         <div className="d-flex justify-content-between">
-                                            <Link to={"/character-description/" + (groupIndex * 3 + index + 1)} className="btn btn-warning text-white">Learn More</Link>
+                                            <Link to={"/character-description/" + (groupIndex * 4 + index + 1)} className="btn btn-warning text-white">Learn More</Link>
                                             <button
                                                 onClick={() => handleFavorites(character.name)}
                                                 className={`btn ${isFavorite(character) ? 'btn-warning text-dark' : 'btn-dark text-white'}`}
