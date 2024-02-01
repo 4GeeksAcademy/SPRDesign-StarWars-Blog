@@ -22,7 +22,7 @@ export default function CharacterDescription() {
     };
 
     return (
-        <div className="container mt-4">
+        <div className="container mt-4 mb-4">
             <div className="card mx-auto" style={{ maxWidth: '900px', border: '2px solid gold', backgroundColor: 'transparent' }}>
                 <div className="row g-0">
                     <div className="col-md-4">

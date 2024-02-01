@@ -79,16 +79,12 @@ body {
   font-weight: bold;
   font-family: "Bungee Outline", sans-serif;
   color: #333;
-  /* Color original de la palabra */
   background: linear-gradient(to right, #333 50%, yellow 70%);
   background-size: 200% 100%;
   animation: lightMove 4s linear infinite;
-  display: inline-block;
-  /* Para que el fondo siga el contorno del texto */
-  background-clip: text;
-  /* Para que el fondo solo se muestre donde está el texto */
-  -webkit-background-clip: text;
-  /* Para navegadores basados en WebKit */
+  display: inline-block;  /* Para que el fondo siga el contorno del texto */
+  background-clip: text; /* Para que el fondo solo se muestre donde está el texto */
+  -webkit-background-clip: text; /* Para navegadores basados en WebKit */
 }
 
 @keyframes lightMove {

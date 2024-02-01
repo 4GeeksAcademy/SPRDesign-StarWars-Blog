@@ -7,7 +7,7 @@ export const Favorites = () => {
 
     const handleDeleteFavorites = (event, favorite) => {
         event.preventDefault();
-        actions.deleteFavorites(favorite);   
+        actions.deleteFavorites(favorite);
     };
 
     return (
@@ -19,12 +19,20 @@ export const Favorites = () => {
                 </button>
 
                 <ul className="dropdown-menu dropdown-menu-end">
-                    {store.favorites?.map((favorite, index) => (
-                        <li key={index} className="dropdown-item">
-                            {favorite}
-                            <Link to="#" onClick={(event) => handleDeleteFavorites(event, favorite)} style={{ cursor: 'pointer', marginLeft: '50px', color: 'yellow'}}><i className="far fa-trash-alt"></i></Link>
+                    {store.favorites.length > 0 ? (
+                        store.favorites.map((favorite, index) => (
+                            <li key={index} className="dropdown-item">
+                                {favorite}
+                                <Link to="#" onClick={(event) => handleDeleteFavorites(event, favorite)} style={{ cursor: 'pointer', marginLeft: '50px', color: 'yellow' }}>
+                                    <i className="far fa-trash-alt"></i>
+                                </Link>
+                            </li>
+                        ))
+                    ) : (
+                        <li className="dropdown-item" >
+                            (empty)
                         </li>
-                    ))}
+                    )}
                 </ul>
             </div>
         </div>
