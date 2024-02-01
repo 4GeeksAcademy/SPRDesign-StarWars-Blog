@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 export default function CharacterDescription() {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [character, setCharacter] = useState({});
 
     useEffect(() => {
@@ -14,6 +16,10 @@ export default function CharacterDescription() {
         getCharacter();
     }, []);
 
+    // Función para manejar el retorno a la página principal
+    const handleReturn = () => {
+        navigate('/'); // Redirige a la página principal
+    };
 
     return (
         <div className="container mt-4">
@@ -59,6 +65,13 @@ export default function CharacterDescription() {
                     </div>
                 </div>
             </div>
+
+            <div className="text-center mt-3">
+                <button className="btn btn-warning text-white" onClick={handleReturn}>
+                    Back to main
+                </button>
+            </div>
+
         </div>
     );
 }
