@@ -75,25 +75,20 @@ body {
 .planet-title,
 .vehicle-title,
 .starship-title {
-  color: white;
-
-}
-
-.character-title,
-.planet-title,
-.vehicle-title,
-.starship-title {
-  font-size: 36px;
+  font-size: 42px;
   font-weight: bold;
   font-family: "Bungee Outline", sans-serif;
-  color: #333;  /* Color original de la palabra */
+  color: #333;
+  /* Color original de la palabra */
   background: linear-gradient(to right, #333 50%, yellow 70%);
   background-size: 200% 100%;
   animation: lightMove 4s linear infinite;
-  display: inline-block;  /* Para que el fondo siga el contorno del texto */
-  background-clip: text;  /* Para que el fondo solo se muestre donde está el texto */
-  -webkit-background-clip: text;  /* Para navegadores basados en WebKit */
-
+  display: inline-block;
+  /* Para que el fondo siga el contorno del texto */
+  background-clip: text;
+  /* Para que el fondo solo se muestre donde está el texto */
+  -webkit-background-clip: text;
+  /* Para navegadores basados en WebKit */
 }
 
 @keyframes lightMove {

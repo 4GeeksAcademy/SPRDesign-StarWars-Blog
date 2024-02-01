@@ -33,6 +33,9 @@ export default function VehicleCard() {
     setCurrentIndex((prevIndex) => Math.min(groupedVehicles.length - 1, prevIndex + 1));
   };
 
+  const isFavorite = (vehicle) => store.favorites.includes(vehicle.name);
+
+
   // Agrupar personajes en conjuntos de tres
   const groupedVehicles = [];
   for (let i = 0; i < vehicles.length; i += 3) {
@@ -63,7 +66,7 @@ export default function VehicleCard() {
                     <h5 className="card-title">{vehicle.name}</h5>
                     <div className="d-flex justify-content-between">
                       <Link to={"/vehicle-description/" + (groupIndex * 3 + index + 1)} className="btn btn-warning text-white">Learn More</Link>
-                      <button onClick={() => handleFavorites(vehicle.name)} className="btn btn-warning text-white"><i className="far fa-star"></i></button>
+                      <button onClick={() => handleFavorites(vehicle.name)} className={`btn ${isFavorite(vehicle) ? 'btn-warning text-dark' : 'btn-dark text-white'}`}><i className="far fa-star"></i></button>
                     </div>
                   </div>
                 </div>

@@ -34,6 +34,8 @@ export default function starshipCard() {
         setCurrentIndex((prevIndex) => Math.min(groupedStarships.length - 1, prevIndex + 1));
     };
 
+    const isFavorite = (starship) => store.favorites.includes(starship.name);
+
     // Agrupar personajes en conjuntos de tres
     const groupedStarships = [];
     for (let i = 0; i < starships.length; i += 3) {
@@ -64,7 +66,7 @@ export default function starshipCard() {
                                         <h5 className="card-title">{starship.name}</h5>
                                         <div className="d-flex justify-content-between">
                                             <Link to={"/starship-description/" + (groupIndex * 3 + index + 1)} className="btn btn-warning text-white">Learn More</Link>
-                                            <button onClick={() => handleFavorites(starship.name)} className="btn btn-warning text-white"><i className="far fa-star"></i></button>
+                                            <button onClick={() => handleFavorites(starship.name)} className={`btn ${isFavorite(starship) ? 'btn-warning text-dark' : 'btn-dark text-white'}`}><i className="far fa-star"></i></button>
                                         </div>
                                     </div>
                                 </div>
