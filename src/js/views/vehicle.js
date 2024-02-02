@@ -9,9 +9,9 @@ export default function VehicleDescription() {
 
     useEffect(() => {
         async function getVehicle() {
-            let response = await fetch(`https://swapi.dev/api/vehicles/${id}`);
+            let response = await fetch(`https://swapi.tech/api/vehicles/${id}`);
             let data = await response.json();
-            setVehicle(data);
+            setVehicle(data?.result?.properties);
         }
         getVehicle();
     }, []);

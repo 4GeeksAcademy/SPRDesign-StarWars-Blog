@@ -9,14 +9,14 @@ export default function StarshipDescription() {
 
     useEffect(() => {
         async function getStarship() {
-            let response = await fetch(`https://swapi.dev/api/starships/${id}`);
+            let response = await fetch(`https://swapi.tech/api/starships/${id}`);
             let data = await response.json();
-            setStarship(data);
+            setStarship(data?.result?.properties);
         }
         getStarship();
     }, []);
 
-    // Función para manejar el retorno a la página principal
+    // Función para manejar el retorno a la página principal. Recordar importar UseNavigate
     const handleReturn = () => {
         navigate('/'); // Redirige a la página principal
     };

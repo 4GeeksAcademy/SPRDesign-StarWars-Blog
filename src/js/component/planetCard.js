@@ -10,10 +10,10 @@ export default function PlanetCard() {
 
     useEffect(() => {
         async function getPlanets() {
-            let response = await fetch("https://swapi.dev/api/planets/");
+            let response = await fetch("https://swapi.tech/api/planets/");
             let data = await response.json();
             setPlanets(data.results);
-        }
+        } 
         getPlanets();
     }, []);
 
@@ -54,11 +54,11 @@ export default function PlanetCard() {
                         <div className="d-flex justify-content-around">
                             {group.map((planet, index) => (
                                 <div key={index} className="card" style={{ width: "16rem", border: "2px solid gold", background:"transparent" }}>
-                                    <img src={`https://starwars-visualguide.com/assets/img/planets/${(groupIndex * 4 + index + 1)}.jpg`} className="card-img-top" alt="Planet Photo" style={{ borderBottom: '2px solid gold'}} />
+                                    <img src={`https://starwars-visualguide.com/assets/img/planets/${(planet.uid)}.jpg`} className="card-img-top" alt="Planet Photo" style={{ borderBottom: '2px solid gold'}} />
                                     <div className="card-body text-center">
                                         <h5 className="card-title">{planet.name}</h5>
                                         <div className="d-flex justify-content-between">
-                                            <Link to={"/planet-description/" + (groupIndex * 4 + index + 1)} className="btn btn-warning text-white">Learn More</Link>
+                                            <Link to={"/planet-description/" + (planet.uid)} className="btn btn-warning text-white">Learn More</Link>
                                             <button
                                                 onClick={() => handleFavorites(planet.name)}
                                                 className={`btn ${isFavorite(planet) ? 'btn-warning text-dark' : 'btn-dark text-white'}`}

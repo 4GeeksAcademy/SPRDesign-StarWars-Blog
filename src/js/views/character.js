@@ -9,14 +9,14 @@ export default function CharacterDescription() {
 
     useEffect(() => {
         async function getCharacter() {
-            let response = await fetch(`https://swapi.dev/api/people/${id}`);
+            let response = await fetch(`https://swapi.tech/api/people/${id}`);
             let data = await response.json();
-            setCharacter(data);
+            setCharacter(data?.result?.properties);
         }
         getCharacter();
     }, []);
 
-    // Función para manejar el retorno a la página principal
+    // Función de retorno a la página principal
     const handleReturn = () => {
         navigate('/'); // Redirige a la página principal
     };

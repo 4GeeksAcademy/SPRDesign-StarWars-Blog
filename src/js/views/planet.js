@@ -9,9 +9,11 @@ export default function PlanetDescription() {
 
     useEffect(() => {
         async function getPlanet() {
-            let response = await fetch(`https://swapi.dev/api/planets/${id}`);
+            let response = await fetch(`https://swapi.tech/api/planets/${id}`);
             let data = await response.json();
-            setPlanet(data);
+            console.log(data);
+
+            setPlanet(data?.result?.properties);
         }
         getPlanet();
     }, []);

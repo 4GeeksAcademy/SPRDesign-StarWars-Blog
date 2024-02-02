@@ -10,7 +10,7 @@ export default function StarshipCard() {
 
     useEffect(() => {
         async function getStarships() {
-            let response = await fetch("https://swapi.dev/api/starships/");
+            let response = await fetch("https://swapi.tech/api/starships/");
             let data = await response.json();
             setStarships(data.results);
         }
@@ -54,11 +54,11 @@ export default function StarshipCard() {
                         <div className="d-flex justify-content-around">
                             {group.map((starship, index) => (
                                 <div key={index} className="card" style={{ width: "16rem", border: "2px solid gold", background:"transparent" }}>
-                                    <img src={`https://starwars-visualguide.com/assets/img/starships/${(groupIndex * 4 + index + 1)}.jpg`} className="card-img-top" alt="Starship Photo" style={{ borderBottom: '2px solid gold'}} />
+                                    <img src={`https://starwars-visualguide.com/assets/img/starships/${(starship.uid)}.jpg`} className="card-img-top" alt="Starship Photo" style={{ borderBottom: '2px solid gold'}} />
                                     <div className="card-body text-center">
                                         <h5 className="card-title">{starship.name}</h5>
                                         <div className="d-flex justify-content-between">
-                                            <Link to={"/starship-description/" + (groupIndex * 4 + index + 1)} className="btn btn-warning text-white">Learn More</Link>
+                                            <Link to={"/starship-description/" + (starship.uid)} className="btn btn-warning text-white">Learn More</Link>
                                             <button
                                                 onClick={() => handleFavorites(starship.name)}
                                                 className={`btn ${isFavorite(starship) ? 'btn-warning text-dark' : 'btn-dark text-white'}`}
